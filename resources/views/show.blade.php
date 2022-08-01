@@ -4,7 +4,7 @@
     <div class="movie-info border-b border-gray-800">
         <div class="container mx-auto px-4 py-16 flex">
             <div class="flex-none">
-                <img src="{{ 'https://image.tmdb.org/t/p/w500/' . $movie['poster_path'] }}"
+                <img src="{{  $movie['poster_path'] }}"
                      alt="poster" class="w-64 md:w-96">
             </div>
             <div class="ml-24">
@@ -17,15 +17,11 @@
                                 data-name="star"/>
                         </g>
                     </svg>
-                    <span class="ml-1">{{ $movie['vote_average'] * 10 . '%' }}</span>
+                    <span class="ml-1">{{ $movie['vote_average'] }}</span>
                     <span class="mx-2">|</span>
-                    <span>{{ \Carbon\Carbon::parse($movie['release_date'])->format('D m, Y') }}</span>
+                    <span>{{ $movie['release_date'] }}</span>
                     <span class="mx-2">|</span>
-                    @foreach($movie['genres'] as $genre)
-                        {{ $genre['name'] }}@if(!$loop->last)
-                            ,
-                        @endif
-                    @endforeach
+                    {{ $movie['genres'] }}
                 </div>
 
                 <p class="text-gray-300 mt-8">
@@ -54,11 +50,10 @@
         <div class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-semibold">Movie Cast</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                @foreach($movie['credits']['cast'] as $cast)
-                    @if($loop->index < 5)
+                @foreach($movie['cast'] as $cast)
                         <div class="mt-8">
                             <a href="#">
-                                <img src="{{ 'https://image.tmdb.org/t/p/w500/' . $cast['profile_path'] }}"
+                                <img src="{{ $cast['profile_path'] }}"
                                      alt="cast poster"
                                      class="hover:opacity-75 transition ease-in-out duration-150 h-72">
                             </a>
@@ -69,7 +64,6 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
                 @endforeach
             </div>
         </div>
@@ -79,7 +73,7 @@
         <div class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-semibold">Images</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                @foreach($movie['images']['backdrops'] as $image)
+                @foreach($movie['images'] as $image)
                     @if($loop->index < 9)
                         <div class="mt-8">
                             <a href="#">
