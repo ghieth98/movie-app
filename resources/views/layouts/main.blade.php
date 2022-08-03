@@ -32,7 +32,7 @@
                 <a href="#" class="hover:text-gray-300">Tv shows</a>
             </li>
             <li class="ml-6">
-                <a href="#" class="hover:text-gray-300">Actors</a>
+                <a href="{{ route('actors.index') }}" class="hover:text-gray-300">Actors</a>
             </li>
         </ul>
         <div class="flex flex-col md:flex-row items-center">

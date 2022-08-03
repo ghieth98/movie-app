@@ -52,7 +52,6 @@ class MoviesViewModel extends ViewModel
             ])->only([
                 'poster_path', 'id', 'genre_ids', 'title', 'vote_average', 'overview', 'release_date', 'genres'
             ]);
-
         });
     }
 }

@@ -30,10 +30,10 @@ class MovieViewModel extends ViewModel
                         : 'https://via.placeholder.com/300x450',
                 ]);
             }),
-            'images' => collect($this->movie['images']['backdrops'])->take(9),]);
-//        ])->only([
-//            'poster_path', 'id', 'genres', 'title', 'vote_average', 'overview', 'release_date', 'credits' ,
-//            'videos', 'images', 'crew', 'cast', 'images'
-//        ]);
+            'images' => collect($this->movie['images']['backdrops'])->take(9),
+        ])->only([
+            'poster_path', 'id', 'genres', 'title', 'vote_average', 'overview', 'release_date', 'credits' ,
+            'videos', 'images', 'crew', 'cast', 'images'
+        ]);
     }
 }
