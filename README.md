@@ -1,7 +1,3 @@
-Certainly! Here’s the updated README file with instructions for installing the project using Laravel Sail:
-
----
-
 # Movie App
 
 Welcome to the Movie App repository! This project is a Laravel-based web application that consumes a movie and series database API and displays information to users.
